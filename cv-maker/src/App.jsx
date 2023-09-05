@@ -14,6 +14,7 @@ import EducationCV from './components/CV/EducationCV'
 import image from './assets/Aksh.png'
 import AboutMe from './components/CV/AboutMe'
 import Contact from './components/CV/contact'
+import WorkEx from './components/WorkEx'
 
 
 function App() {
@@ -27,6 +28,21 @@ function App() {
   const [age, setAge] =  useState(null);
   const [gender, setGender] = useState('Male');
   const [birthPlace, setBirthPlace] = useState('Dehradun, Uttarakhand, India');
+
+  const [school, setSchool] = useState('Delhi Technological University');
+  const [degree, setDegree] = useState('B.Tech');
+  const [location, setLocation] = useState('Delhi, India');
+  const [fromEd, setFromEd] = useState('2022');
+  const [toEd, setToEd] = useState('2026');
+
+  const [company, setCompany] = useState('Apple Inc.');
+  const [position, setPosition] = useState('Full Stack Developer');
+  const [from, setFrom] = useState('2026');
+  const [to, setTo] = useState('Present');
+  const [a1, seta1] = useState('Led development of robust version upgrade to ABC works 2.0 Engineering softwarerelease for speed and improved the user experience.');
+  const [a2, seta2] = useState('A 25% increase in the incremental revenues(multi-million dollar growth) within one year.');
+  const [a3, seta3] = useState('Award for "Best Web Developer of the year"');
+
 
   const onNameChange = (e) => {
     setFullName(e.target.value);
@@ -68,6 +84,54 @@ function App() {
     setBirthPlace(e.target.value);
   }
 
+  const onSchoolChange = (e) => {
+    setSchool(e.target.value);
+  }
+
+  const onDegreeChange = (e) => {
+    setDegree(e.target.value);
+  }
+
+  const onLocationChange = (e) => {
+    setLocation(e.target.value);
+  }
+
+  const onFromEdChange = (e) => {
+    setFromEd(e.target.value);
+  }
+
+  const onToEdChange = (e) => {
+    setToEd(e.target.value);
+  }
+
+  const onCompanyChange = (e) => {
+    setCompany(e.target.value);
+  }
+
+  const onPositionChange = (e) => {
+    setPosition(e.target.value);
+  }
+
+  const onFromChange = (e) => {
+    setFrom(e.target.value);
+  }
+
+  const onToChange = (e) => {
+    setTo(e.target.value);
+  }
+
+  const ona1Change = (e) => {
+    seta1(e.target.value);
+  }
+
+  const ona2Change = (e) => {
+    seta2(e.target.value);
+  }
+
+  const ona3Change = (e) => {
+    seta3(e.target.value);
+  }
+
   return (
     <>
       <section id="left">
@@ -84,7 +148,19 @@ function App() {
 
         </InfoForm>
 
-        <Education> </Education>
+        <Education onSchoolChange={onSchoolChange}
+                   onLocationChange={onLocationChange}
+                   onDegreeChange={onDegreeChange}
+                   onFromEdChange={onFromEdChange}
+                   onToEdChange={onToEdChange}> </Education>
+
+        <WorkEx onCompanyChange={onCompanyChange}
+                onPositionChange={onPositionChange}
+                onFromChange={onFromChange}
+                onToChange={onToChange}
+                ona1Change={ona1Change}
+                ona2Change={ona2Change}
+                ona3Change={ona3Change}> </WorkEx>
       </section>
 
       <section id='right'>
@@ -98,8 +174,8 @@ function App() {
         <div className="rightpanel">
           <Header fullName={fullName} currentRole={currentRole}></Header>
           <CareerObjective text={objective}></CareerObjective>
-          <EducationCV></EducationCV>
-          <Experience></Experience>
+          <EducationCV school={school} location={location} degree={degree} fromEd={fromEd} toEd={toEd}></EducationCV>
+          <Experience company={company} position={position} from={from} to={to} a1={a1} a2={a2} a3={a3}></Experience>
           
         </div>
       </section>
