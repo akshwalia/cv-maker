@@ -1,0 +1,10 @@
+
+
+body > div {
+  display: grid;
+  grid-template-columns: 1fr 1000px;
+  gap: 30px;
+  width: 100%;
+}
+
+

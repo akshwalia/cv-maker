@@ -1,0 +1,14 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formWrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.formWrapper div{
+    display: flex;
+    flex-direction: column;
+}
